@@ -37,7 +37,7 @@ body {
     justify-content: center;
     padding: 3px;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .resource::after {
@@ -118,6 +118,7 @@ body {
     padding: 8px 15px;
     width: auto;
     font-family: Arial, Helvetica, sans-serif;
+    position: relative;
 }
 
 .resource.highlight::after {
@@ -219,12 +220,6 @@ body {
 
 .resource:not(.highlight):has(.fa-charging-station)::after {
     border-top: 9px solid var(--charging-color);
-}
-
-#new-resource {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
 }
 
 /* form */

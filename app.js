@@ -15,9 +15,12 @@ async function initMap() {
     let infoWindow = new google.maps.InfoWindow({
     });
 
-
     // Configure the click listener.
     map.addListener("click", (mapsMouseEvent) => {
+        let all = document.getElementsByClassName("highlight");
+        while (all.length) {
+            all[0].classList.remove("highlight");
+        };
         lat = (mapsMouseEvent.latLng.toJSON().lat);
         long = (mapsMouseEvent.latLng.toJSON().lng);
         // Close the current InfoWindow.
@@ -70,7 +73,12 @@ async function initMap() {
         });
 
         AdvancedMarkerElement.addListener("click", () => {
+            let all = document.getElementsByClassName("highlight");
+            while (all.length) {
+                all[0].classList.remove("highlight");
+            };
             toggleHighlight(AdvancedMarkerElement, resource);
+            infoWindow.close();
         });
     }
 }
@@ -79,12 +87,12 @@ async function initMap() {
 function toggleHighlight(markerView, resource) {
     if (markerView.content.classList.contains("highlight")) {
         markerView.content.classList.remove("highlight");
-        markerView.zIndex = null;
+        markerView.zIndex = -1;
     } else {
         markerView.content.classList.add("highlight");
-        markerView.zIndex = 1;
+        markerView.zIndex = 2;
     }
-}
+};
 
 function buildContent(resource) {
     const content = document.createElement("div");
