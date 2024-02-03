@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div id="form">
+        <form id="myForm">
+            <div class="writeInInputs">
+                <h3><label>Title</label></h3>
+                <input name="title" placeholder="Enter Title" />
+
+
+                <h3><label>Description</label></h3>
+                <input type="text" id="description" name="description" placeholder="Short Description" />
+            </div>
+
+            <div class="chooseInput">
+                <h3><label>Type of Resource</label></h3>
+                <select id="type" name="type">
+                    <option value="disabled selected">Select Type of Resource</option>
+                    <option value="couch">Couch</option>
+                    <option value="droplet">Water Station</option>
+                    <option value="charging-station">Charging Station</option>
+                    <option value="desktop">Study Space</option>
+                </select>
+                <br />
+            
+                <h3><label>Review</label></h3>
+                <input type="radio" id="1" name="review" value="1" />One Star<br />
+                <input type="radio" id="2" name="review" value="2" />Two Stars<br />
+                <input type="radio" id="3" name="review" value="3" />Three Stars<br />
+                <input type="radio" id="4" name="review" value="4" />Four Stars<br />
+                <input type="radio" id="5" name="review" value="5" />Five Stars<br />
+            </div>
+
+            <h3><label>Image</label></h3>
+            <input type="file" id="img" name="img" accept=".png, .jpeg, .jpg"/>
+
+            <div class="writeInInputs">
+                <h3><label>Latitude</label></h3>
+                <input type="text" id="lat" name="lat" placeholder="Latitude" />
+
+
+                <h3><label>Longitude</label></h3>
+                <input type="text" id="long" name="long" placeholder="Longitude" />
+            </div>
+            <br>
+
+        </form>
+        <div id="buttonBreak">
+            <button onclick="SubForm()">Submit</button>
+        </div>
+    </div>
+
+    <!-- prettier-ignore -->
+    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
+            ({ key: "AIzaSyB2RrRBsMP2YXKOav-FhbI1utuoIpMgzjQ", v: "weekly" });</script>
+    <script src="app.js"></script>
+</body>
+
+</html>
