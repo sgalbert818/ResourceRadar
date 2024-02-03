@@ -1,3 +1,6 @@
+let lat;
+let long;
+
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -15,6 +18,8 @@ async function initMap() {
 
     // Configure the click listener.
     map.addListener("click", (mapsMouseEvent) => {
+        lat = (mapsMouseEvent.latLng.toJSON().lat);
+        long = (mapsMouseEvent.latLng.toJSON().lng);
         // Close the current InfoWindow.
         infoWindow.close();
         // Create a new InfoWindow.
@@ -22,11 +27,38 @@ async function initMap() {
             position: mapsMouseEvent.latLng,
         });
         infoWindow.setContent(
-            `<h1>test</h1>`
+            `<div id="form">
+            <form id="myForm">
+                <div class="writeInInputs">
+                    <h3><label>Title</label></h3>
+                    <input name="title" id="title" placeholder="Enter Title" />
+                    <h3><label>Description</label></h3>
+                    <input type="text" id="description" name="description" placeholder="Short Description" />
+                </div>
+    
+                <div class="chooseInput">
+                    <h3><label>Category</label></h3>
+                    <select id="type" name="type">
+                        <option value="disabled selected">Select Type of Resource</option>
+                        <option value="couch">Couch</option>
+                        <option value="droplet">Water Station</option>
+                        <option value="charging-station">Charging Station</option>
+                        <option value="desktop">Study Space</option>
+                    </select>
+                    <h3><label>Rating</label></h3>
+                    <input type="range" min="1" max="5" value="1" class="slider" id="review">
+                    <h3><label>Image</label></h3>
+                    <input type="file" id="img" name="img" accept=".png, .jpeg, .jpg" />
+                </div>
+            </form>
+    
+            <div id="buttonBreak">
+                <br>
+                <button id="submit" onclick="SubForm()">Submit</button>
+            </div>
+        </div>`
         );
         infoWindow.open(map);
-        console.log((mapsMouseEvent.latLng.toJSON().lat));
-        console.log((mapsMouseEvent.latLng.toJSON().lng));
     });
 
     for (const resource of resources) {
@@ -165,8 +197,8 @@ function SubForm() {
         review: this.review.value,
         img: images,
         position: {
-            lat: Number(this.lat.value),
-            lng: Number(this.long.value),
+            lat: lat,
+            lng: long,
         },
     }
 
