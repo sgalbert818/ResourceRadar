@@ -1,11 +1,32 @@
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-    const center = { lat: 32.23185, lng: -110.95156 };
+    const myLatlng = { lat: 32.23185, lng: -110.95156 };
     const map = new Map(document.getElementById("map"), {
         zoom: 16,
-        center,
+        center: myLatlng,
         mapId: "4504f8b37365c3d0",
+    });
+
+    // Create the initial InfoWindow.
+    let infoWindow = new google.maps.InfoWindow({
+    });
+
+
+    // Configure the click listener.
+    map.addListener("click", (mapsMouseEvent) => {
+        // Close the current InfoWindow.
+        infoWindow.close();
+        // Create a new InfoWindow.
+        infoWindow = new google.maps.InfoWindow({
+            position: mapsMouseEvent.latLng,
+        });
+        infoWindow.setContent(
+            `<h1>test</h1>`
+        );
+        infoWindow.open(map);
+        console.log((mapsMouseEvent.latLng.toJSON().lat));
+        console.log((mapsMouseEvent.latLng.toJSON().lng));
     });
 
     for (const resource of resources) {
@@ -21,6 +42,7 @@ async function initMap() {
         });
     }
 }
+
 
 function toggleHighlight(markerView, resource) {
     if (markerView.content.classList.contains("highlight")) {
@@ -124,9 +146,6 @@ const resources = [
 
 initMap();
 
-let tester = document.querySelector('.tester');
-let form = document.forms["myForm"];
-
 function SubForm() {
 
     const input = document.getElementById("img");
@@ -135,15 +154,15 @@ function SubForm() {
 
     imagesArray.push(file[0])
     let images = ""
-    imagesArray.forEach((image, index) => {
-      images = URL.createObjectURL(image);
+    imagesArray.forEach((image) => {
+        images = URL.createObjectURL(image);
     })
 
     let newObject = {
         title: document.querySelector('input[name="title"]').value,
         description: this.description.value,
         type: this.type.value,
-        review: Number(document.querySelector('input[name="review"]:checked').value),
+        review: this.review.value,
         img: images,
         position: {
             lat: Number(this.lat.value),
