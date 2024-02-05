@@ -110,7 +110,7 @@ body {
 /* resource styles in highlighted state */
 
 .resource.highlight {
-    background-color: #FFFFFF;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
     min-height: 80px;

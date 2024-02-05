@@ -11,21 +11,13 @@ async function initMap() {
         mapId: "4504f8b37365c3d0",
     });
 
-    // Create the initial InfoWindow.
     let infoWindow = new google.maps.InfoWindow({
     });
 
-    // Configure the click listener.
     map.addListener("click", (mapsMouseEvent) => {
-        let all = document.getElementsByClassName("highlight");
-        while (all.length) {
-            all[0].classList.remove("highlight");
-        };
         lat = (mapsMouseEvent.latLng.toJSON().lat);
         long = (mapsMouseEvent.latLng.toJSON().lng);
-        // Close the current InfoWindow.
         infoWindow.close();
-        // Create a new InfoWindow.
         infoWindow = new google.maps.InfoWindow({
             position: mapsMouseEvent.latLng,
         });
@@ -73,30 +65,24 @@ async function initMap() {
         });
 
         AdvancedMarkerElement.addListener("click", () => {
-            let all = document.getElementsByClassName("highlight");
-            while (all.length) {
-                all[0].classList.remove("highlight");
-            };
             toggleHighlight(AdvancedMarkerElement, resource);
             infoWindow.close();
         });
     }
 }
 
-
-function toggleHighlight(markerView, resource) {
+function toggleHighlight(markerView) {
     if (markerView.content.classList.contains("highlight")) {
         markerView.content.classList.remove("highlight");
-        markerView.zIndex = -1;
+        markerView.zIndex = null;
     } else {
         markerView.content.classList.add("highlight");
-        markerView.zIndex = 2;
+        markerView.zIndex = 1;
     }
 };
 
 function buildContent(resource) {
     const content = document.createElement("div");
-
     content.classList.add("resource");
     content.innerHTML = `
       <div class="icon">
@@ -191,13 +177,11 @@ function SubForm() {
     const input = document.getElementById("img");
     let imagesArray = [];
     const file = input.files;
-
     imagesArray.push(file[0])
     let images = ""
     imagesArray.forEach((image) => {
         images = URL.createObjectURL(image);
     })
-
     let newObject = {
         title: document.querySelector('input[name="title"]').value,
         description: this.description.value,
@@ -209,7 +193,6 @@ function SubForm() {
             lng: long,
         },
     }
-
     resources.push(newObject);
     initMap();
 }
