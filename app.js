@@ -1,13 +1,22 @@
 let lat;
 let long;
+let uofa = { lat: 32.23185, lng: -110.95156 };
+let cuboulder = { lat: 40.00722, lng: -105.26550 };
+let ucla = { lat: 34.07015, lng: -118.44360 };
+let alabama = { lat: 33.21167, lng: -87.54013 };
+let coordinates = '';
 
-async function initMap() {
+let ari = document.getElementById('ari');
+let bou = document.getElementById('bou');
+let los = document.getElementById('los');
+let ala = document.getElementById('ala');
+
+async function initMap(centerCoordinates) {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-    const myLatlng = { lat: 32.23185, lng: -110.95156 };
     const map = new Map(document.getElementById("map"), {
         zoom: 16,
-        center: myLatlng,
+        center: centerCoordinates,
         mapId: "4504f8b37365c3d0",
     });
 
@@ -170,7 +179,27 @@ const resources = [
     },
 ];
 
-initMap();
+initMap(uofa);
+
+ari.addEventListener('click', function() {
+    coordinates = uofa;
+    initMap(uofa);
+});
+
+bou.addEventListener('click', function() {
+    coordinates = cuboulder;
+    initMap(cuboulder);
+});
+
+los.addEventListener('click', function() {
+    coordinates = ucla;
+    initMap(ucla);
+});
+
+ala.addEventListener('click', function() {
+    coordinates = alabama;
+    initMap(alabama);
+});
 
 function SubForm() {
 
@@ -194,5 +223,5 @@ function SubForm() {
         },
     }
     resources.push(newObject);
-    initMap();
+    initMap(coordinates);
 }
