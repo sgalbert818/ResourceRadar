@@ -177,6 +177,83 @@ const resources = [
             lng: -110.94962,
         },
     },
+    {
+        title: "Rec center study lounge",
+        description: "Study lounge just past the second weight floor, lots of couches and computers.",
+        type: "desktop",
+        review: 4,
+        img: 'images/img-6.jpg',
+        position: {
+            lat: 40.01017,
+            lng: -105.26919,
+        },
+    },
+    {    
+        title: "Charging station at student union",
+        description: "Small charger station next to main hall, by room 101.",
+        type: "charging-station",
+        review: 5,
+        img: 'images/img-2.jpg',
+        position: {
+            lat: 40.00763,
+            lng: -105.27094,
+        },
+    },
+    {
+        title: "Business school sofas",
+        description: "Huge red sofa otside of room 352. Kind of scratchy but very quiet and big enough for a nap.",
+        type: "couch",
+        review: 4,
+        img: 'images/img-1.jpg',
+        position: {
+            lat: 40.00568,
+            lng: -105.26322,
+        },
+    },
+    {    
+        title: "Charging station at student union",
+        description: "Small charger station on the second level by elevators.",
+        type: "charging-station",
+        review: 4,
+        img: 'images/img-2.jpg',
+        position: {
+            lat: 34.07057,
+            lng: -118.44415,
+        },
+    },
+    {
+        title: "Royce hall water bottle station",
+        description: "Refill station by the main entrance on the right",
+        type: "droplet",
+        review: 5,
+        img: 'images/img-3.jpg',
+        position: {
+            lat: 34.07284,
+            lng: -118.44133,
+        },
+    },
+    {
+        title: "Student rec center armchairs",
+        description: "Set of three armchairs outside shake smart, noisy but comfortable",
+        type: "couch",
+        review: 3,
+        img: 'images/img-1.jpg',
+        position: {
+            lat: 33.21231,
+            lng: -87.53099,
+        },
+    },
+    {
+        title: "Student center study lounge",
+        description: "Study lounge for students at the end of the main hallway on the main floor.",
+        type: "desktop",
+        review: 4,
+        img: 'images/img-4.jpg',
+        position: {
+            lat: 33.21453,
+            lng: -87.54507,
+        },
+    },
 ];
 
 initMap(uofa);
