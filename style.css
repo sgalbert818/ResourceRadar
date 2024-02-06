@@ -4,7 +4,7 @@
 
     --desktop-color: #ff244c;
     --water-color: #16aeff;
-    --couch-color: #ffc400;
+    --couch-color: #ffaa00;
     --charging-color: #5ed40a;
 }
 
@@ -29,23 +29,24 @@ header h1 {
 
 header p {
     font-size: 14px;
-    width: 90%;
+    width: 85%;
+    text-align: center;
 }
 
-.location-btns {
+.locations {
     display: flex;
     justify-content: center;
+    font-size: 14px;    
 }
 
-.location {
-    padding: 3px;
-    margin: 10px 6px;
+#locations {
+    margin: -2px 10px;
 }
 
 #map {
     margin: 25px auto;
     min-height: 550px;
-    width: 90%;
+    width: 85%;
 }
 
 /* resource styles in unhighlighted state */

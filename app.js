@@ -1,15 +1,10 @@
 let lat;
 let long;
-let uofa = { lat: 32.23185, lng: -110.95156 };
-let cuboulder = { lat: 40.00722, lng: -105.26550 };
-let ucla = { lat: 34.07015, lng: -118.44360 };
-let alabama = { lat: 33.21167, lng: -87.54013 };
+const uofa = { lat: 32.23185, lng: -110.95156 };
+const cuboulder = { lat: 40.00722, lng: -105.26550 };
+const ucla = { lat: 34.07015, lng: -118.44360 };
+const alabama = { lat: 33.21167, lng: -87.54013 };
 let coordinates = '';
-
-let ari = document.getElementById('ari');
-let bou = document.getElementById('bou');
-let los = document.getElementById('los');
-let ala = document.getElementById('ala');
 
 async function initMap(centerCoordinates) {
     const { Map } = await google.maps.importLibrary("maps");
@@ -258,7 +253,7 @@ const resources = [
 
 initMap(uofa);
 
-ari.addEventListener('click', function() {
+/*ari.addEventListener('click', function() {
     coordinates = uofa;
     initMap(uofa);
 });
@@ -276,7 +271,28 @@ los.addEventListener('click', function() {
 ala.addEventListener('click', function() {
     coordinates = alabama;
     initMap(alabama);
-});
+});*/
+
+const locations = document.getElementById('locations');
+
+locations.onchange = function() {
+   if (locations.value == 'uofa') {
+    coordinates = uofa;
+    initMap(uofa);
+   }
+   if (locations.value == 'cuboulder') {
+    coordinates = cuboulder;
+    initMap(cuboulder);
+   }
+   if (locations.value == 'ucla') {
+    coordinates = ucla;
+    initMap(ucla);
+   }
+   if (locations.value == 'alabama') {
+    coordinates = alabama;
+    initMap(alabama);
+   }
+ }
 
 function SubForm() {
 

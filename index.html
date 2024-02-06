@@ -14,13 +14,18 @@
 <body>
     <header>
         <h1>Resource Radar</h1>
-        <p>In need of a quiet place to nap? Left your phone charger in your dorm? Forgot to print out your chemistry lab that's due in 10 minutes? Not a problem!</p>
+        <p>In need of a quiet place to nap? Left your phone charger in your dorm? Forgot to print out your chemistry lab
+            that's due in 10 minutes? Not a problem!</p>
     </header>
-    <div class="location-btns">
-        <button class="location" id="ari">UArizona</button>
-        <button class="location" id="bou">CU Boulder</button>
-        <button class="location" id="los">UCLA</button>
-        <button class="location" id="ala">Alabama</button>    
+
+    <div class="locations">
+        <label for="locations">Select your school: </label>
+        <select name="locations" id="locations">
+            <option value="uofa">University of Arizona</option>
+            <option value="cuboulder">University of Colorado Boulder</option>
+            <option value="ucla">University of California Los Angeles</option>
+            <option value="alabama">University of Alabama</option>
+        </select>
     </div>
 
     <div id="map"></div>
