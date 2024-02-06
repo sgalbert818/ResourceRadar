@@ -16,9 +16,34 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    margin: 30px 0 0 0;
+}
+
+header p {
+    font-size: 14px;
+}
+
+.location-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.location {
+    padding: 3px;
+    margin: 10px 10px;
+}
+
 #map {
-    margin: 50px auto;
-    height: 600px;
+    margin: 25px auto;
+    height: 550px;
     width: 1000px;
 }
 
