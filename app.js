@@ -253,26 +253,6 @@ const resources = [
 
 initMap(uofa);
 
-/*ari.addEventListener('click', function() {
-    coordinates = uofa;
-    initMap(uofa);
-});
-
-bou.addEventListener('click', function() {
-    coordinates = cuboulder;
-    initMap(cuboulder);
-});
-
-los.addEventListener('click', function() {
-    coordinates = ucla;
-    initMap(ucla);
-});
-
-ala.addEventListener('click', function() {
-    coordinates = alabama;
-    initMap(alabama);
-});*/
-
 const locations = document.getElementById('locations');
 
 locations.onchange = function() {
