@@ -9,18 +9,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div class="header left">
-            <div class="left-inner">
-                <h1>Resource Radar</h1>
-                <h2>Created by students, for students</h2>
+        <h1>Resource <span id="red">Radar</span></h1>
+        <h2>Created <span id="red">by</span> students, <span id="red">for</span> students</h2>
+    </header>
+    <div class="about">
+        <div class="about-div left">
+            <div class="inner one">
+                <div class="inner-img inner-couch">
+                    <div class="fa fa-icon fa-couch circle"></div>
+                </div>
+                <div class="inner-text">
+                    <h4>Need a quick nap between class? Find somewhere quiet to rest your head and get some shut eye before your exam.</h4>
+                </div>
+            </div>
+            <div class="inner two">
+                <div class="inner-img inner-charge">
+                    <div class="fa fa-icon fa-charging-station circle"></div>
+                </div>
+                <div class="inner-text">
+                    <h4>We've all been there. Your phone is dead, your class starts in 15 minutes, and your dorm in a mile away. Just charge your phone on campus!</h4>
+                </div>
             </div>
         </div>
-        <div class="header right"></div>
-    </header>
+        <div class="about-div right">
+            <div class="inner three">
+                <div class="inner-img inner-water">
+                    <div class="fa fa-icon fa-droplet circle"></div>
+                </div>
+                <div class="inner-text">
+                    <h4>Say goodbye to old, outdated water fountains. Say hello to clean, modern, efficient, and environmentally-friendly filling stations.</h4>
+                </div>
+            </div>
+            <div class="inner four">
+                <div class="inner-img inner-desk">
+                    <div class="fa fa-icon fa-desktop circle">
+                    </div>
+                </div>
+                <div class="inner-text">
+                    <h4>Find the perfect place on campus to study for your exam, print out your lab report, or collaborate with friends in a shared space.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="locations">
         <label for="locations">Select your school: </label>
@@ -64,6 +99,9 @@
             <button id="submit" onclick="SubForm()">Submit</button>
         </div>
     </div>-->
+
+    <footer>
+    </footer>
 
     <!-- prettier-ignore -->
     <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
