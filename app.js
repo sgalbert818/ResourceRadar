@@ -4,7 +4,7 @@ const uofa = { lat: 32.23185, lng: -110.95156 };
 const cuboulder = { lat: 40.00722, lng: -105.26550 };
 const ucla = { lat: 34.07015, lng: -118.44360 };
 const alabama = { lat: 33.21167, lng: -87.54013 };
-let coordinates = '';
+let coordinates = uofa;
 
 async function initMap(centerCoordinates) {
     const { Map } = await google.maps.importLibrary("maps");

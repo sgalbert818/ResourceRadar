@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    min-height: 500px;
+    min-height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -41,6 +41,33 @@ header h2 {
     letter-spacing: 1px;
     margin: 0;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 470px) {
+    header {
+        min-height: 120px;
+    }
+    
+    header h1 {
+        font-size: 4vw;
+    }
+
+    header h2 {
+        font-size: 12px;
+    }
+
+    .locations {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 14px; 
+        margin: 50px 0;   
+    }
+    
+    #locations-label {
+        margin-bottom: 10px;
+    }
 }
 
 .about {
@@ -180,6 +207,7 @@ header h2 {
     margin: 25px auto;
     min-height: 550px;
     width: 85%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 footer {
